@@ -30,7 +30,7 @@ const Tag = ({tagId} : props) => {
     if (tag){
         return (
         <Box>
-            <Button color={"white"} backgroundColor={button} onClick={() => routeToTag()}>{tag.name}</Button>
+            <Button size='xs' color={"white"} backgroundColor={button} onClick={() => routeToTag()}>{tag.name}</Button>
         </Box>
     )
     }

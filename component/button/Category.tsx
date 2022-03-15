@@ -31,7 +31,7 @@ const Category = ({cateId} : props) => {
     if (category){
         return (
         <Box>
-            <Button color={"white"} backgroundColor={button} onClick={() => routeToCategory()}>{category.name}</Button>
+            <Button size='xs' color={"white"} backgroundColor={button} onClick={() => routeToCategory()}>{category.name}</Button>
         </Box>
     )
     }
