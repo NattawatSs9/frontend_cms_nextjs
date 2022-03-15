@@ -30,7 +30,7 @@ export default function Navbar({ children } : any) {
     <>
       <Box bg={background} px={4} position={'fixed'} width={'100%'} zIndex={1000}>
         <Flex h={16} alignItems={'center'} justifyContent={'flex-end'}>
-        <Button marginRight={5} onClick={() => router.push("/")}>Home</Button>
+        <Button marginRight={5} onClick={() => router.push("/")}>Clear Filter</Button>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7} display={"flex"} alignItems={"center"}>
               <Button className={styles.circle} onClick={toggleColorMode} >
