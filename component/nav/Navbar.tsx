@@ -25,9 +25,10 @@ export default function Navbar({ children } : any) {
   const router=  useRouter()
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const background = useColorModeValue('#E2D4C1', '#111211')
   return (
     <>
-      <Box bg={useColorModeValue('#E2D4C1', '#111211')} px={4} position={'fixed'} width={'100%'} zIndex={1000}>
+      <Box bg={background} px={4} position={'fixed'} width={'100%'} zIndex={1000}>
         <Flex h={16} alignItems={'center'} justifyContent={'flex-end'}>
         <Button marginRight={5} onClick={() => router.push("/")}>Home</Button>
           <Flex alignItems={'center'}>

@@ -13,6 +13,8 @@ const Filter = () => {
   const [selectCate, setSelectCate] = useState<string>("not");
   const router = useRouter();
 
+  const background = useColorModeValue('#874356', '#E6D5B8')
+  const color = useColorModeValue("white", "black")
   useEffect(() => {
     const get = async () => {
       const tags = await TagService.getAllTags();
@@ -76,7 +78,7 @@ const Filter = () => {
               })}
             </Stack>
           </RadioGroup>
-          <Button color={useColorModeValue("white", "black")} backgroundColor={useColorModeValue('#874356', '#E6D5B8')} onClick={() => search()}>Search Tag and Category</Button>
+          <Button color={color} backgroundColor={background} onClick={() => search()}>Search Tag and Category</Button>
         </Stack>
       )}
     </Box>

@@ -9,6 +9,7 @@ type props = {
 const Tag = ({tagId} : props) => {
     const [tag, setTag] = useState<tag>()
     const router = useRouter()
+    const button = useColorModeValue("#F68989","#F0A500")
     useEffect(() => {
         const get = async () => {
           try {
@@ -29,7 +30,7 @@ const Tag = ({tagId} : props) => {
     if (tag){
         return (
         <Box>
-            <Button color={"white"} backgroundColor={useColorModeValue("#F68989","#F0A500")} onClick={() => routeToTag()}>{tag.name}</Button>
+            <Button color={"white"} backgroundColor={button} onClick={() => routeToTag()}>{tag.name}</Button>
         </Box>
     )
     }

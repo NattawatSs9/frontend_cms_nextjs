@@ -90,6 +90,7 @@ const UserPage = () => {
   const id = router.query.id as string;
   const fetcher = (url: string) => axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(API.POST.GET + id, fetcher);
+  const border = useColorModeValue("gray.400", "black.600")
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -260,7 +261,6 @@ const UserPage = () => {
               value={mycomment}
               onChange={handleInputChange}
               placeholder="Enter your comment"
-              colorScheme={useColorModeValue("gray.400", "black.600")}
 
             ></Textarea>
             
@@ -270,7 +270,7 @@ const UserPage = () => {
 
             {comment.map((data, index) => {
               return (
-                <Box key={index} borderWidth={"1px"} padding={5} borderColor={useColorModeValue("gray.400", "black.600")}>
+                <Box key={index} borderWidth={"1px"} padding={5} borderColor={border}>
                   <Stack
                     direction={"row"}
                     style={{ paddingBottom: 15, paddingTop: 15 }}

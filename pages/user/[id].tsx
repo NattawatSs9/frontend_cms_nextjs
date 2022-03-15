@@ -39,6 +39,7 @@ const UserPage = () => {
       collection: [],
     },
   };
+  const border = useColorModeValue("gray.400", "black.600")
   const [user, setUser] = useState<author>(dummyAuthor);
   const [post, setPost] = useState<post[]>();
   const router = useRouter();
@@ -87,7 +88,7 @@ const UserPage = () => {
               <Text fontSize={"2xl"}>description:</Text>
              
             </Center>
-            <Center paddingTop={5}> <Box width={400} height={100} borderWidth={"1px"} borderColor={useColorModeValue("gray.400", "gray.600")}></Box></Center>
+            <Center paddingTop={5}> <Box width={400} height={100} borderWidth={"1px"} borderColor={border}></Box></Center>
             <Center paddingTop={10}><Link href={user.link}><Text fontSize={"xl"} color="blue.600" fontWeight={"semibold"} style={{textDecoration: "underline", cursor: "pointer"}}>Go to profile</Text></Link></Center>
 
             <Text fontSize={"3xl"} fontWeight={"semibold"} paddingTop={30}>
@@ -100,7 +101,7 @@ const UserPage = () => {
                     <Box
                       borderRadius={10}
                       borderWidth={"thin"}
-                      borderColor={useColorModeValue("gray.400", "gray.600")}
+                      borderColor={border}
                       style={{ cursor: "pointer" }}
                       display={"flex"}
                       alignItems={"center"}

@@ -10,6 +10,7 @@ type props = {
 const Category = ({cateId} : props) => {
     const [category, setCategory] = useState<category>()
     const router = useRouter()
+    const button = useColorModeValue("#C65D7B","#E45826")
     useEffect(() => {
         const get = async () => {
           try {
@@ -30,7 +31,7 @@ const Category = ({cateId} : props) => {
     if (category){
         return (
         <Box>
-            <Button color={"white"} backgroundColor={useColorModeValue("#C65D7B","#E45826")} onClick={() => routeToCategory()}>{category.name}</Button>
+            <Button color={"white"} backgroundColor={button} onClick={() => routeToCategory()}>{category.name}</Button>
         </Box>
     )
     }
