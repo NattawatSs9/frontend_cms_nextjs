@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </Text>
       </Box>
       <Divider marginBottom={10}/>
-      <Filter />
+      <Filter tag={(tag)} category={(category)} />
       {posts.map((item: any, index: any) => (
         <div key={item.id} className={styles.cardSpace}>
           <PostCard postId={item.id} authorId={item.author} />

@@ -15,11 +15,15 @@ import { useRouter } from "next/router";
 import { category } from "../../types/category";
 import { tag } from "../../types/tag";
 
-const Filter = () => {
+type props = {
+    tag: string,
+    category: string
+}
+const Filter = ({tag, category}: props) => {
   const [allTag, setAllTag] = useState<tag[]>([]);
   const [allCategory, setAllCategory] = useState<category[]>([]);
-  const [selectTag, setSelectedTag] = useState<string>("not");
-  const [selectCate, setSelectCate] = useState<string>("not");
+  const [selectTag, setSelectedTag] = useState<string>(tag);
+  const [selectCate, setSelectCate] = useState<string>(category);
   const router = useRouter();
 
   const background = useColorModeValue("#874356", "#E6D5B8");
@@ -33,6 +37,26 @@ const Filter = () => {
     };
     get();
   }, []);
+
+  useEffect(() => {
+      if (tag == undefined && category != undefined) {
+          setSelectedTag("not")
+          setSelectCate(category)
+      }
+      else if (category == undefined && tag != undefined) {
+          setSelectCate("not")
+          setSelectedTag(tag)
+      }
+      else if (category == undefined && tag == undefined){
+          setSelectCate("not")
+          setSelectedTag("not")
+      }
+      else {
+          setSelectCate(category)
+          setSelectedTag(tag)
+      }
+
+  }, [tag, category])
 
   const search = () => {
     if (selectTag != "not" && selectCate != "not") {
