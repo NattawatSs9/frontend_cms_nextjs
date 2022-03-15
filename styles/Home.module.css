@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 .container {
   padding: 0 2rem;
 }
@@ -113,4 +115,36 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.circle {
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+}
+
+.postcard{
+  padding: 15px !important;
+  border: 1px solid lightgray
+}
+.head{
+  padding-bottom: 15px;
+}
+.avatar{
+  margin-right: 10px;
+}
+.content {
+ padding-top: 20px; 
+ padding-bottom: 20px;
+}
+.footer{
+  margin-top: 10px;
+}
+.cardSpace{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header {
+  font-family: 'Righteous', cursive !important;
 }
